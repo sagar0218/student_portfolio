@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Student Portfolio System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="customizer-panel" style="background: #1b1f27; padding: 25px; margin: 20px 8%; border-radius: 8px; border: 2px dashed #e74c3c;">
+        <h3 style="color: #e74c3c; margin-bottom: 15px;"><i class="fas fa-cogs"></i> Real-Time Multi-Student Portfolio Engine</h3>
+        
+        <div style="margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #333;">
+            <label style="color: #fff; font-weight: 600; margin-right: 10px;">Select Active Profile:</label>
+            <select id="profile-select" style="padding: 8px 15px; background: #11141a; color: #fff; border: 1px solid #e74c3c; border-radius: 4px; cursor: pointer;">
+                <option value="default">Lakkawar Sagar (Default)</option>
+            </select>
+        </div>
+
+        <p style="color: #a0a7b5; font-size: 14px; margin-bottom: 15px;">Fill out your details below. Add your social account links to update the header buttons dynamically!</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+            <input type="text" id="input-name" placeholder="Student Full Name" style="padding: 10px; background: #11141a; color: #fff; border: 1px solid #333; border-radius: 4px;">
+            <input type="text" id="input-role" placeholder="Domain / Stream (e.g., Data Science Student)" style="padding: 10px; background: #11141a; color: #fff; border: 1px solid #333; border-radius: 4px;">
+            <input type="text" id="input-about" placeholder="Brief Bio Summary" style="padding: 10px; background: #11141a; color: #fff; border: 1px solid #333; border-radius: 4px;">
+            
+            <input type="url" id="input-github" placeholder="GitHub Profile Link (https://...)" style="padding: 10px; background: #11141a; color: #fff; border: 1px solid #333; border-radius: 4px;">
+            <input type="url" id="input-linkedin" placeholder="LinkedIn Profile Link (https://...)" style="padding: 10px; background: #11141a; color: #fff; border: 1px solid #333; border-radius: 4px;">
+
+            <input type="text" id="input-skills" placeholder="Skills separated by commas (e.g., Java, C++, Linux)" style="padding: 10px; background: #11141a; color: #fff; border: 1px solid #333; border-radius: 4px;">
+
+            <div style="color: #fff; font-size: 12px;">
+                <label>Upload Resume PDF:</label>
+                <input type="file" id="input-resume-file" accept="application/pdf" style="margin-top:5px; color:#fff;">
+            </div>
+
+            <input type="text" id="input-proj1-title" placeholder="Project 1 Title" style="padding: 10px; background: #11141a; color: #fff; border: 1px solid #333; border-radius: 4px;">
+            <input type="text" id="input-proj1-desc" placeholder="Project 1 Description" style="padding: 10px; background: #11141a; color: #fff; border: 1px solid #333; border-radius: 4px;">
+            <div style="color: #fff; font-size: 12px;">
+                <label>Upload Project 1 PDF:</label>
+                <input type="file" id="input-proj1-file" accept="application/pdf" style="margin-top:5px; color:#fff;">
+            </div>
+
+            <input type="text" id="input-proj2-title" placeholder="Project 2 Title" style="padding: 10px; background: #11141a; color: #fff; border: 1px solid #333; border-radius: 4px;">
+            <input type="text" id="input-proj2-desc" placeholder="Project 2 Description" style="padding: 10px; background: #11141a; color: #fff; border: 1px solid #333; border-radius: 4px;">
+            <div style="color: #fff; font-size: 12px;">
+                <label>Upload Project 2 PDF:</label>
+                <input type="file" id="input-proj2-file" accept="application/pdf" style="margin-top:5px; color:#fff;">
+            </div>
+        </div>
+        
+        <div style="margin-top: 20px;">
+            <button id="save-profile-btn" class="btn" style="padding: 10px 20px; background-color: #2ecc71; margin-right: 10px;">Save Profile to Browser</button>
+            <button id="delete-profile-btn" class="btn" style="padding: 10px 20px; background-color: #e74c3c; margin-right: 10px;"><i class="fas fa-trash"></i> Delete This Profile</button>
+            <button id="clear-data-btn" class="btn" style="padding: 10px 20px; background-color: #7f8c8d;">Reset All Profiles</button>
+        </div>
+    </div>
+
+    <header>
+        <div class="logo">Portfolio<span>.</span></div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger"><i class="fas fa-bars"></i></div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h3>Hello, I'm</h3>
+            <h1 id="portfolio-name">Lakkawar Sagar</h1>
+            <p id="portfolio-role">Data Science Student & Aspiring Web Developer</p>
+            <div class="social-icons">
+                <a id="github-link" href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                <a id="linkedin-link" href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <a href="#contact" class="btn">Hire Me</a>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <h2 class="section-title">About <span>Me</span></h2>
+        <div class="about-container">
+            <div class="about-text">
+                <p id="portfolio-about">I am a passionate Computer Science and Engineering (Data Science) student focused on creating innovative and user-friendly web solutions. I love combining technical skills with creative layouts to build dynamic digital experiences.</p>
+                <a id="resume-link" href="Sagar_Resume.pdf" class="btn" download="Sagar_Resume.pdf"><i class="fas fa-download"></i> Download Resume</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills-section">
+        <h2 class="section-title">My <span>Skills</span></h2>
+        <div id="skills-container" class="skills-container"></div>
+    </section>
+
+    <section id="projects" class="projects-section">
+        <h2 class="section-title">Project <span>Gallery</span></h2>
+        <div class="projects-grid">
+            
+            <div class="project-card">
+                <div class="project-info">
+                    <span class="project-tech">C / Data Structures</span>
+                    <h3 id="proj1-title">Bank Management System</h3>
+                    <p id="proj1-desc">A console-based application that simulates fundamental banking operations like account creation, deposits, withdrawals, and balance inquiries. Built using structures, linked lists, and file handling for permanent storage.</p>
+                    <a id="proj1-link" href="Bank_management_system.pdf" download="Bank_management_system.pdf" class="project-link">Download Project PDF <i class="fas fa-file-pdf"></i></a>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-info">
+                    <span class="project-tech">R Programming</span>
+                    <h3 id="proj2-title">Student Grade Analyzer</h3>
+                    <p id="proj2-desc">An automation tool that processes student marks using the 'dplyr' package, automatically evaluates final letter grades based on percentages, and generates real-time performance bar charts via 'ggplot2'.</p>
+                    <a id="proj2-link" href="student_grade_analyzer.pdf" download="student_grade_analyzer.pdf" class="project-link">Download Presentation PDF <i class="fas fa-file-pdf"></i></a>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2 class="section-title">Contact <span>Me</span></h2>
+        <div class="contact-container">
+            <form id="portfolio-form" class="contact-form">
+                <div class="input-group"><input type="text" id="name" placeholder="Your Name" required></div>
+                <div class="input-group"><input type="email" id="email" placeholder="Your Email" required></div>
+                <div class="input-group"><textarea id="message" rows="6" placeholder="Your Message" required></textarea></div>
+                <button type="submit" class="btn submit-btn">Send Message</button>
+                <div id="form-feedback" class="form-feedback"></div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Student Portfolio Platform | Dynamic Multi-User Framework.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
