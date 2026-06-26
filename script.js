@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('portfolio-role').textContent = profile.role;
         document.getElementById('portfolio-about').textContent = profile.about;
         
-        document.getElementById('github-link').setAttribute('href', profile.github || "https://github.com");
+        document.getElementById('github-link').setAttribute('href', profile.github || "https://github.com/sagar0218");
         document.getElementById('linkedin-link').setAttribute('href', profile.linkedin || "https://linkedin.com");
 
         const iconMap = {
